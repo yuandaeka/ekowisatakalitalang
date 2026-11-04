@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Mountain Silhouette Merapi -->
+  <path d="M32 8L54 52H10L32 8Z" fill="#0F2419" />
+  <path d="M32 8L44 32L32 26L20 32L32 8Z" fill="#D95D39" opacity="0.9" />
+  <path d="M4 56C14 53 24 53 32 55C40 57 50 57 60 54" stroke="#2E6F40" stroke-width="4" stroke-linecap="round" />
+  <circle cx="32" cy="18" r="2" fill="#FFFFFF" />
+</svg>
+
