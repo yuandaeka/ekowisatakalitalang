@@ -14,7 +14,7 @@ export const ElevationProfile: React.FC<ElevationProfileProps> = ({
   height = 70,
   width = 300,
   className = '',
-  strokeColor = '#D95D39', // ember-600
+  strokeColor = '#72A422', // Komoot green
   fillColor,
 }) => {
   if (!points || points.length === 0) return null;
@@ -50,14 +50,14 @@ export const ElevationProfile: React.FC<ElevationProfileProps> = ({
         preserveAspectRatio="none"
       >
         <defs>
-          <linearGradient id="elevationGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor={fillColor || strokeColor} stopOpacity="0.3" />
-            <stop offset="100%" stopColor={fillColor || strokeColor} stopOpacity="0.0" />
+          <linearGradient id="komootElevationGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor={fillColor || strokeColor} stopOpacity="0.32" />
+            <stop offset="100%" stopColor={fillColor || strokeColor} stopOpacity="0.02" />
           </linearGradient>
         </defs>
 
         {/* Fill area */}
-        <path d={areaD} fill="url(#elevationGrad)" />
+        <path d={areaD} fill="url(#komootElevationGrad)" />
 
         {/* Stroke line */}
         <path
@@ -69,15 +69,17 @@ export const ElevationProfile: React.FC<ElevationProfileProps> = ({
           strokeLinejoin="round"
         />
 
-        {/* Start and peak dots */}
+        {/* Start dot */}
         <circle
           cx={coords[0].x}
           cy={coords[0].y}
           r="3"
-          fill="#1C1E1D"
-          stroke="#FFFFFF"
-          strokeWidth="1.5"
+          fill="#FFFFFF"
+          stroke={strokeColor}
+          strokeWidth="2"
         />
+
+        {/* Peak dot */}
         {coords.length > 1 && (
           <circle
             cx={coords[coords.length - 1].x}

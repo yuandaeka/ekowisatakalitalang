@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Sparkles, CheckCircle2, Tag } from 'lucide-react';
 import { getEvents } from '../../services/dataService';
 import { EcoEvent } from '../../types';
 import { useApp } from '../../context/AppContext';
@@ -30,40 +30,40 @@ export const EventsPage: React.FC = () => {
     : events.filter((e) => e.status === filter);
 
   return (
-    <div className="min-h-screen pt-28 pb-24 bg-mist-50">
+    <div className="min-h-screen pt-24 pb-20 bg-komoot-bg font-sans">
       
       {/* Header Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="bg-canopy-950 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden border border-canopy-800">
-          <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wide bg-ember-600/30 text-ember-400 border border-ember-600/40 mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>AGENDA & EVENT RESMI KALI TALANG</span>
+      <div className="bg-white border-b border-gray-200 py-10 mb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-komoot-green mb-2">
+              <Calendar className="w-4 h-4" />
+              <span>AGENDA & EVENT RESMI</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
               Event Ekowisata & Fun Trekking
             </h1>
-            <p className="mt-3 text-sm sm:text-base text-mist-200/80 font-sans leading-relaxed">
-              Ikuti ajang jalan sehat lereng Merapi, sunrise coffee morning, dan kegiatan edukasi konservasi bersama warga Desa Balerante dan inisiatif Aksara Mahasiswa Berdampak.
+            <p className="mt-2 text-sm sm:text-base text-gray-600">
+              Ikuti ajang jalan santai lereng Merapi, sunrise coffee morning, dan kegiatan edukasi konservasi bersama warga Desa Balerante.
             </p>
           </div>
         </div>
       </div>
 
       {/* Filter Tabs */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-        <div className="flex items-center gap-2 overflow-x-auto pb-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
           {['Semua', 'Registration Open', 'Coming Soon', 'Completed'].map((status) => (
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-colors ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-colors ${
                 filter === status
-                  ? 'bg-canopy-950 text-white'
-                  : 'bg-white text-basalt-600 hover:bg-mist-200 border border-mist-200'
+                  ? 'bg-komoot-green text-white shadow-sm'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
               }`}
             >
-              {status}
+              {status === 'Registration Open' ? 'Pendaftaran Dibuka' : status}
             </button>
           ))}
         </div>
@@ -72,23 +72,23 @@ export const EventsPage: React.FC = () => {
       {/* Events List */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {loading ? (
-          <div className="text-center py-20 text-basalt-400 font-mono text-sm">
+          <div className="text-center py-20 text-gray-400 font-mono text-sm">
             Memuat daftar event...
           </div>
         ) : filteredEvents.length === 0 ? (
-          <div className="bg-white rounded-2xl p-12 text-center border border-mist-200 max-w-lg mx-auto">
-            <p className="font-serif text-lg text-basalt-900 font-semibold">Tidak ada event untuk filter ini</p>
-            <p className="text-sm text-basalt-600 mt-1">Coba pilih filter status pendaftaran lainnya.</p>
+          <div className="bg-white rounded-2xl p-12 text-center border border-gray-200 max-w-lg mx-auto">
+            <p className="font-bold text-lg text-gray-900">Tidak ada event untuk filter ini</p>
+            <p className="text-sm text-gray-600 mt-1">Coba pilih filter status pendaftaran lainnya.</p>
           </div>
         ) : (
-          <div className="space-y-8">
+          <div className="space-y-6">
             {filteredEvents.map((evt) => (
               <div
                 key={evt.id}
-                className="bg-white rounded-3xl border border-mist-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12"
+                className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-komoot-lg transition-all duration-300 grid grid-cols-1 lg:grid-cols-12"
               >
                 {/* Event Image (5 Cols) */}
-                <div className="lg:col-span-5 relative min-h-[260px] lg:min-h-full bg-basalt-800">
+                <div className="lg:col-span-5 relative min-h-[240px] lg:min-h-full bg-gray-900">
                   <img
                     src={evt.bannerImage}
                     alt={evt.title}
@@ -97,11 +97,11 @@ export const EventsPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
                   <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                     {evt.isFeatured && (
-                      <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-ember-600 text-white shadow-md">
-                        FEATURED EVENT
+                      <span className="px-3 py-1 rounded-full text-xs font-bold bg-komoot-green text-white shadow-sm">
+                        FEATURED
                       </span>
                     )}
-                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-canopy-950/80 backdrop-blur-md text-emerald-300 border border-emerald-500/30">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-sm text-gray-900 border border-gray-200">
                       {evt.status}
                     </span>
                   </div>
@@ -110,35 +110,35 @@ export const EventsPage: React.FC = () => {
                 {/* Event Information (7 Cols) */}
                 <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
                   <div>
-                    <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-basalt-500 mb-2">
-                      <span className="flex items-center gap-1.5 text-ember-600 font-semibold">
+                    <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-gray-500 mb-2">
+                      <span className="flex items-center gap-1.5 text-komoot-green">
                         <Calendar className="w-4 h-4" />
                         {evt.date}
                       </span>
                       <span className="flex items-center gap-1.5">
-                        <Clock className="w-4 h-4" />
+                        <Clock className="w-4 h-4 text-gray-400" />
                         {evt.timeRange}
                       </span>
                     </div>
 
-                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-basalt-900 leading-tight">
-                      <Link to={`/events/${evt.slug}`} className="hover:text-ember-600 transition-colors">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
+                      <Link to={`/events/${evt.slug}`} className="hover:text-komoot-green transition-colors">
                         {evt.title}
                       </Link>
                     </h2>
-                    <p className="mt-1 text-sm font-sans text-basalt-600 font-medium">
+                    <p className="mt-1 text-sm text-gray-600 font-medium">
                       {evt.subtitle}
                     </p>
 
-                    <p className="mt-4 text-sm text-basalt-600 font-sans leading-relaxed line-clamp-3">
+                    <p className="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3">
                       {evt.description}
                     </p>
 
                     {/* Quick Highlights */}
-                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-basalt-700 font-sans">
+                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-700">
                       {evt.highlights.slice(0, 4).map((h, i) => (
                         <div key={i} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-komoot-green shrink-0" />
                           <span className="truncate">{h}</span>
                         </div>
                       ))}
@@ -146,13 +146,13 @@ export const EventsPage: React.FC = () => {
                   </div>
 
                   {/* Footer Meta & Actions */}
-                  <div className="mt-6 pt-5 border-t border-mist-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="mt-6 pt-5 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-xs font-mono text-basalt-400 block">Biaya Pendaftaran:</span>
-                      <span className="text-lg font-serif font-bold text-ember-600">
+                      <span className="text-[11px] uppercase font-bold text-gray-400 block tracking-wider">Tarif Pendaftaran</span>
+                      <span className="text-lg font-bold text-komoot-green font-mono">
                         {evt.priceLabel}
                       </span>
-                      <span className="text-xs text-basalt-500 font-mono block">
+                      <span className="text-xs text-gray-500 font-mono block">
                         {evt.quotaLabel}
                       </span>
                     </div>
@@ -160,13 +160,13 @@ export const EventsPage: React.FC = () => {
                     <div className="flex items-center gap-3">
                       <button
                         onClick={() => openRegistrationModal(evt)}
-                        className="px-5 py-2.5 rounded-xl bg-ember-600 hover:bg-ember-500 text-white font-semibold text-xs sm:text-sm transition-all shadow-md"
+                        className="px-5 py-2.5 rounded-xl bg-komoot-green hover:bg-komoot-green-hover text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
                       >
-                        Daftar via Modal
+                        Daftar via Google Form
                       </button>
                       <Link
                         to={`/events/${evt.slug}`}
-                        className="px-4 py-2.5 rounded-xl bg-mist-100 hover:bg-mist-200 text-basalt-800 font-semibold text-xs sm:text-sm transition-colors flex items-center gap-1.5"
+                        className="px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-xs sm:text-sm transition-colors flex items-center gap-1.5"
                       >
                         <span>Lihat Rundown</span>
                         <ArrowRight className="w-3.5 h-3.5" />
