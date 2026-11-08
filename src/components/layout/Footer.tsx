@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/trails" className="hover:text-white transition-colors">
-                  Rute Komoot & Trekking
+                  Rute & Jalur Trekking
                 </Link>
               </li>
               <li>

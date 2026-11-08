@@ -68,7 +68,7 @@ export const TrailCard: React.FC<TrailCardProps> = ({ trail }) => {
           </p>
         </div>
 
-        {/* Tactical Telemetry Bar (Komoot 3-col Grid) */}
+        {/* Tactical Telemetry Bar (3-col Grid) */}
         <div className="mt-5 pt-4 border-t border-mist-200">
           <div className="grid grid-cols-3 divide-x divide-mist-200 text-center py-1">
             <div className="px-2">

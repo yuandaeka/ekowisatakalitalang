@@ -168,7 +168,7 @@ export const AdminTrailsPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-serif font-bold text-basalt-900 tracking-tight">
-            Kelola Rute Komoot & Trekking
+            Kelola Rute & Jalur Trekking
           </h1>
           <p className="mt-1 text-sm text-basalt-600 font-sans">
             Konfigurasi metrik jarak, elevasi gain, waypoints pos pantau, dan profil kemiringan lereng.
@@ -272,7 +272,7 @@ export const AdminTrailsPage: React.FC = () => {
             <div className="bg-canopy-950 text-white px-6 py-4 flex items-center justify-between border-b border-canopy-800">
               <div>
                 <h3 className="font-serif font-bold text-xl">
-                  {editingTrail.title ? `Edit Rute: ${editingTrail.title}` : 'Buat Rute Komoot Baru'}
+                  {editingTrail.title ? `Edit Rute: ${editingTrail.title}` : 'Buat Rute Baru'}
                 </h3>
                 <span className="text-xs font-mono text-mist-200/70">
                   Parameter Teknis, Waypoint & Profil Elevasi
@@ -436,7 +436,7 @@ export const AdminTrailsPage: React.FC = () => {
                   Data Titik Profil Elevasi (Angka 0-100 Dipisah Koma)
                 </label>
                 <p className="text-[11px] text-basalt-500 font-sans">
-                  Digunakan untuk menggambar grafik profil SVG ala Komoot di kartu dan halaman rute.
+                  Digunakan untuk menggambar grafik profil elevasi SVG di kartu dan halaman rute.
                 </p>
                 <input
                   type="text"

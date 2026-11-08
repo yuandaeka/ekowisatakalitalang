@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: 'Beranda', path: '/' },
-    { label: 'Rute Komoot', path: '/trails', icon: Compass },
+    { label: 'Rute Trekking', path: '/trails', icon: Compass },
     { label: 'Event & Trekking', path: '/events', icon: Calendar },
     { label: 'Tentang & Galeri', path: '/about', icon: Info },
   ];

@@ -17,7 +17,7 @@ export interface ParkStatusConfig {
   updatedAt: string;
 }
 
-// 2. Model Jalur Trekking & Sepeda (Komoot Style)
+// 2. Model Jalur Trekking & Sepeda (Profil Elevasi & Waypoints)
 export interface TrailWaypoint {
   name: string;
   distanceFromStartKm: number;

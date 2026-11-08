@@ -119,7 +119,7 @@ export const AboutGalleryPage: React.FC = () => {
                 Program Aksara Mahasiswa Berdampak
               </h3>
               <p className="text-sm sm:text-base text-basalt-600 font-sans leading-relaxed">
-                Website ini beserta digitalisasi sistem pendaftaran event Kali Talang Fun Trekking dan pemetaan rute interaktif Komoot merupakan wujud nyata kontribusi mahasiswa dalam memperluas jangkauan promosi Desa Wisata Balerante ke tingkat nasional dan internasional.
+                Website ini beserta digitalisasi sistem pendaftaran event Kali Talang Fun Trekking dan pemetaan rute jalur trekking interaktif merupakan wujud nyata kontribusi mahasiswa dalam memperluas jangkauan promosi Desa Wisata Balerante ke tingkat nasional dan internasional.
               </p>
             </div>
 

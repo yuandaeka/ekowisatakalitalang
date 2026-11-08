@@ -51,7 +51,7 @@ export const AdminLayout: React.FC = () => {
   const navItems = [
     { label: 'Status & Beranda', path: '/admin/dashboard', icon: LayoutDashboard },
     { label: 'Kelola Event & GForm', path: '/admin/events', icon: Calendar },
-    { label: 'Kelola Rute Komoot', path: '/admin/trails', icon: Compass },
+    { label: 'Kelola Rute Trekking', path: '/admin/trails', icon: Compass },
     { label: 'Kelola Galeri', path: '/admin/gallery', icon: ImageIcon },
   ];
 

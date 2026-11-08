@@ -49,7 +49,7 @@ export const TrailsPage: React.FC = () => {
               <span>KATALOG JALUR RESMI BALERANTE</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
-              Eksplorasi Rute Trekking Komoot-Style
+              Eksplorasi Jalur Trekking & Sepeda
             </h1>
             <p className="mt-3 text-sm sm:text-base text-mist-200/80 font-sans leading-relaxed">
               Jelajahi keindahan lereng Gunung Merapi melalui jalur ramah keluarga, jalur jurang lahar andesit, hingga trek downhill legendaris dengan profil elevasi presisi.

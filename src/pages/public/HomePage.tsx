@@ -142,7 +142,7 @@ export const HomePage: React.FC = () => {
                 className="px-6 py-3.5 rounded-xl font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all text-center flex items-center justify-center gap-2"
               >
                 <Compass className="w-4 h-4 text-emerald-400" />
-                <span>Jelajahi Rute (Komoot View)</span>
+                <span>Jelajahi Rute Trekking</span>
               </Link>
             </div>
 
@@ -474,7 +474,7 @@ export const HomePage: React.FC = () => {
       )}
 
       {/* ======================================================== */}
-      {/* 4. KOMOOT-STYLE TRAIL PREVIEW SECTION                    */}
+      {/* 4. TRAIL PREVIEW & ELEVATION PROFILE                     */}
       {/* ======================================================== */}
       <section className="py-24 bg-white text-basalt-900 border-b border-mist-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -484,7 +484,7 @@ export const HomePage: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-ember-600 font-semibold mb-2">
                 <Compass className="w-4 h-4" />
-                KOMOOT-STYLE OUTDOOR TRACKS
+                JALUR TREKKING & SEPEDA RESMI
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-basalt-900 tracking-tight">
                 Pilihan Rute & Profil Elevasi

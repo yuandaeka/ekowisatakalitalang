@@ -137,7 +137,7 @@ export const TrailDetailPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Tactical Telemetry Header (Komoot Style 4-Column Bar) */}
+          {/* Tactical Telemetry Header (4-Column Bar) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-mist-200 bg-white border-t border-mist-200 p-4 sm:p-6 text-center">
             
             <div className="p-3">
